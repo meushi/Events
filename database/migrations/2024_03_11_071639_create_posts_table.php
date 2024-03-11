@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('event_id');
-            $table->foreignId('venue_id');
-            $table->foreignId('performer_Id');
+            $table->foreignId('event_id')->constrained();
+            $table->foreignId('venue_id')->constrained();
+            $table->foreignId('performer_Id')->constrained();
             $table->string('body');
             $table->timestamps();
             $table->softDeletes();
