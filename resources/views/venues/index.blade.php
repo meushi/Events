@@ -2,12 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>イベント投稿一覧</title>
+        <title>会場投稿一覧</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>イベントごとの投稿一覧</h1>
+        <h1>会場ごとの投稿一覧</h1>
         <a href='/posts/create/'>新規作成</a>
             <h2 class='body'>
                 <a href="/posts/"></a>
