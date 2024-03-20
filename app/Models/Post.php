@@ -44,6 +44,6 @@ class Post extends Model
     
     public function post_likes()
     {
-        return $this->hasMany(Post_likes::class);
+        return $this->hasMany(Post_like::class);
     }
 }
