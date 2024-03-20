@@ -7,13 +7,14 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>{{$username}}</h1>
+        <h1>投稿</h1>
         <a href={{'/posts/create/'}}>新規作成</a>
         <div>
             @foreach ($posts as $post)
                 <div style='border:solid 1px; margin-bottom: 10px;'>
-                    <p> {{ $post->body }}</p>
-                    <a class='postId'href={{'/post/'.$post->id}}>{{$post->title}}</a>
+                    <a href={{'/users/show/'.$user->id}}>{{$user->name}}</a>
+                    <a href={{'/events/show/'.$event->id}}>{{$event->name}}</a>
+                    <a class='postId'href={{'/posts/'.$post->id}}>{{$postId}}</a>
                 </div>
             @endforeach
         </div>

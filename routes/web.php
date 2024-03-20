@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -15,4 +14,5 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/post/{post}',[PostController::class,'index']);
+Route::get('/',[PostController::class,'index']);
+Route::get('/posts/{post}',[PostController::class,'show']);
