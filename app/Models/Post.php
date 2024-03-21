@@ -22,17 +22,22 @@ class Post extends Model
         return $this::with('post')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
-    public function events()
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    
+    public function event()
     {
         return $this->belongsTo(Event::class);
     }
     
-    public function venues()
+    public function venue()
     {
         return $this->belongsTo(Venue::class);
     }
     
-    public function performers()
+    public function performer()
     {
         return $this->belongsTo(Performer::class);
     }

@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class PostSeeder extends Seeder
 {
@@ -16,22 +18,22 @@ class PostSeeder extends Seeder
     {
          DB::table('posts')->insert([
         'body'=>'楽しかった',
+        'user_id'=>1,
         'event_id'=>1,
         'venue_id'=>1,
         'performer_id'=>1,
         'created_at' => new DateTime(),
         'updated_at' => new DateTime(),
-        'deleted_at' => new DateTime(),
          ]);
          
          DB::table('posts')->insert([
         'body'=>'また行きたい',
+        'user_id'=>1,
         'event_id'=>2,
         'venue_id'=>2,
         'performer_id'=>2,
         'created_at' => new DateTime(),
         'updated_at' => new DateTime(),
-        'deleted_at' => new DateTime(),
          ]);
     }
 }
