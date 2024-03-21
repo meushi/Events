@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class VenueSeeder extends Seeder
 {
@@ -15,13 +17,13 @@ class VenueSeeder extends Seeder
     public function run()
     {
          DB::table('venues')->insert([
-            'title'=>'イベントA',
+            'name'=>'イベントA',
             'body'=>'楽しかった',
             'updated_at' => new DateTime(),
          ]);
          
          DB::table('venues')->insert([
-            'title'=>'イベントB',
+            'name'=>'イベントB',
             'body'=>'楽しかった',
             'updated_at' => new DateTime(),
          ]);

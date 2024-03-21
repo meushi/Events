@@ -15,9 +15,9 @@
             <div>
                 @foreach ($posts as $post)
                     <div style='border:solid 1px; margin-bottom: 10px;'>
-                        <a href={{'/users/show/'.$user->id}}>{{$user->name}}</a>
-                        <a href={{'/events/show/'.$event->id}}>{{$event->name}}</a>
-                        <a class='postId'href={{'/posts/'.$post->id}}>{{$postId}}</a>
+                        <a href={{'/users/show/'.$post->user->id}}>{{$post->user->name}}</a>
+                        <a href={{'/events/show/'.$post->event->id}}>{{$post->event->title}}</a>
+                        <a class='postId'href={{'/posts/'.$post->id}}>{{$post->body}}</a>
                     </div>
                 @endforeach
             </div>
