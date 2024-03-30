@@ -9,6 +9,7 @@
     </head>
     <body>
         <h1>出演者詳細</h1>
+        <a href="/performers/{{ $post->performer->id }}">{{ $post->performer->name }}</a>
         <div>
             <p>出演者名：{{ $performer->title }}</p>
             <p>本文：{{ $performer->body }}</p>

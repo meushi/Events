@@ -10,8 +10,8 @@
     <body>
         <h1>投稿詳細</h1>
         <div>
-            <p>本文：{{ $post->body }}</p>
             <p>イベント：<a href="/events/{{ $post->event->id }}">{{ $post->event->name }}</a></p>
+            <p>本文：{{ $post->body }}</p>
             <p>会場:<a href="/venues/{{ $post->venue->id }}">{{ $post->venue->name }}</a></p>
             <p>出演者:<a href="/performers/{{ $post->performer->id }}">{{ $post->performer->name }}</a></p>
         </div>

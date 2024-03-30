@@ -9,6 +9,7 @@
     </head>
     <body>
         <h1>会場詳細</h1>
+         <a href="/venues/{{ $post->venue->id }}">{{ $post->venue->name }}</a>
         <div>
             <p>会場名：{{ $venue->title }}</p>
             <p>本文：{{ $venue->body }}</p>

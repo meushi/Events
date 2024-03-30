@@ -9,11 +9,11 @@ class EventController extends Controller
 {
     public function index(Event $event)
     {
-        return view('events.index')->with(['events' => $event->get()]);
+        return view('events.index')->with(['posts' => $event->getByEvent()]);
     }
     
     public function show(Event $event)
     {
-        return view('events.show')->with(['event' => $event]);
+        return view('events.show')->with(['events' => $event]);
     }
 }

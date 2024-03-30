@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>出演者ごとの投稿一覧</h1>
+        <a href="/performers/{{ $post->performer->id }}">{{ $post->performer->name }}</a>
         <a href='/posts/create/'>新規作成</a>
             <h2 class='body'>
                 <a href="/posts/"></a>
