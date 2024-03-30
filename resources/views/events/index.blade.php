@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>イベントごとの投稿一覧</h1>
+        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
         <a href='/posts/create/'>新規作成</a>
             <h2 class='body'>
                 <a href="/posts/"></a>

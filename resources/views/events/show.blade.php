@@ -10,6 +10,7 @@
     <body>
         <h1>イベント詳細</h1>
         <div>
+            <a href="/events/{{ $post->event->id }}">{{ $post->event->name }}</a>
             <p>イベント名：{{ $event->title }}</p>
             <p>本文：{{ $event->body }}</p>
             <p>イベント：<a href="/events/{{ $event->id }}">{{ $event->name }}</a></p>

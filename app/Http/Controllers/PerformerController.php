@@ -9,11 +9,11 @@ class PerformerController extends Controller
 {
     public function index(Performer $performer)
     {
-        return view('performers.index')->with(['performers' => $performer->get()]);
+        return view('performers.index')->with(['posts' => $performer->getByPerformer()]);
     }
     
     public function show(Performer $performer)
     {
-        return view('performers.show')->with(['performer' => $performer]);
+        return view('performers.show')->with(['performers' => $performer]);
     }
 }

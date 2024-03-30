@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>会場ごとの投稿一覧</h1>
+        <a href="/venues/{{ $post->venue->id }}">{{ $post->venue->name }}</a>
         <a href='/posts/create/'>新規作成</a>
             <h2 class='body'>
                 <a href="/posts/"></a>

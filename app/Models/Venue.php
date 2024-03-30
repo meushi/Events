@@ -10,14 +10,14 @@ class Venue extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'name',
         'body',
     ];
 
-    public function getPaginateByLimit(int $limit_count = 5)
+    public function getPaginateByVenue(int $limit_count = 5)
     {
         // updated_atで降順に並べたあと、limitで件数制限をかける
-        return $this::with('venue')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this->posts()->with('venue')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
     public function posts()

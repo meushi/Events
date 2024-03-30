@@ -10,14 +10,14 @@ class Event extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'name',
         'body',
     ];
 
-    public function getPaginateByLimit(int $limit_count = 5)
+    public function getPaginateByEvent(int $limit_count = 5)
     {
         // updated_atで降順に並べたあと、limitで件数制限をかける
-        return $this::with('event')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this->posts()->with('event')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
     public function posts()
