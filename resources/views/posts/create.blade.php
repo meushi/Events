@@ -14,8 +14,6 @@
             <div class="body">
                 <textarea name="post[body]" placeholder="楽しかった。"></textarea>
             </div>
-            <input type="submit" value="store"/>
-        </form>
             <div class="Event">
             <h2>イベント</h2>
                 <select name="post[event_id]">
@@ -39,6 +37,8 @@
                     @endforeach
                 </select>
             </div>
+            <input type="submit" value="store"/>
+        </form>
         <div class="footer">
             <a href="/">投稿一覧へ</a>
         </div>

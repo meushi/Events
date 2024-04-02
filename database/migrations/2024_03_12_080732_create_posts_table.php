@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('event_id')->constrained();
             $table->foreignId('venue_id')->constrained();
             $table->foreignId('performer_id')->constrained();
+            $table->string('title');
             $table->string('body');
             $table->timestamps();
             $table->softDeletes();

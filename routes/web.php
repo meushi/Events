@@ -19,6 +19,9 @@ use App\Http\Controllers\PerformerController;
 
 Route::get('/',[PostController::class,'index']);
 Route::get('/posts/create', [PostController::class, 'create']);
+Route::get('/posts/create/{event}', [PostController::class, 'create']);
+Route::get('/posts/create/{venue}', [PostController::class, 'create']);
+Route::get('/posts/create/{performer}', [PostController::class, 'create']);
 Route::get('/posts/{post}',[PostController::class,'show']);
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/events/show',[PostController::class,'show']);
