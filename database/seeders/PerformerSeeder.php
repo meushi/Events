@@ -17,13 +17,13 @@ class PerformerSeeder extends Seeder
     public function run()
     {
          DB::table('performers')->insert([
-            'name'=>'イベントA',
+            'name'=>'Aさん',
             'body'=>'楽しかった',
             'updated_at' => new DateTime(),
          ]);
          
          DB::table('performers')->insert([
-            'name'=>'イベントB',
+            'name'=>'Bさん',
             'body'=>'楽しかった',
             'updated_at' => new DateTime(),
          ]);
