@@ -17,6 +17,7 @@ class PostSeeder extends Seeder
     public function run()
     {
          DB::table('posts')->insert([
+        'title'=>'イベントA',
         'body'=>'楽しかった',
         'user_id'=>1,
         'event_id'=>1,
@@ -27,6 +28,7 @@ class PostSeeder extends Seeder
          ]);
          
          DB::table('posts')->insert([
+        'title'=>'イベントA',
         'body'=>'また行きたい',
         'user_id'=>1,
         'event_id'=>2,

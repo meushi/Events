@@ -21,17 +21,16 @@ class PostController extends Controller
         return view('posts.show')->with(['post' => $post]);
     }
     
-    public function create(Event $event)
+    public function create(Event $event, Venue $venue, Performer $performer)
     {
-         return view('posts.create')->with(['events' => $event->get()]);
-         return view('posts.create')->with(['venues' => $venue->get()]);
-         return view('posts.create')->with(['performers' => $performer->get()]);
+         return view('posts.create')->with(['events' => $event->get(),'venues' => $venue->get(),'performers' => $performer->get()]);
     }
     
     public function store(Request $request, Post $post)
     {
         $input = $request['post'];
-        $post->fill($input_post)->save();
+        $post->user_id=\Auth::id();
+        $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
     

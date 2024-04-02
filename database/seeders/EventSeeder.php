@@ -17,13 +17,13 @@ class EventSeeder extends Seeder
     public function run()
     {
          DB::table('events')->insert([
-            'title'=>'イベントA',
+            'name'=>'イベントA',
             'body'=>'楽しかった',
             'updated_at' => new DateTime(),
          ]);
          
          DB::table('events')->insert([
-            'title'=>'イベントB',
+            'name'=>'イベントB',
             'body'=>'楽しかった',
             'updated_at' => new DateTime(),
          ]);
