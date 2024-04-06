@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post_likes extends Model
+class Post_like extends Model
 {
     use HasFactory;
     
@@ -14,10 +14,10 @@ class Post_likes extends Model
         'post_id',
     ];
 
-    public function getPaginateByPost_likes(int $limit_count = 5)
+    public function getPaginateByPost_like(int $limit_count = 5)
     {
         // updated_atで降順に並べたあと、limitで件数制限をかける
-        return $this->posts()->with('post_likes')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this->posts()->with('post_like')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
     
     public function user() 
