@@ -15,6 +15,30 @@
             <p>会場:<a href="/venues/{{ $post->venue->id }}">{{ $post->venue->name }}</a></p>
             <p>出演者:<a href="/performers/{{ $post->performer->id }}">{{ $post->performer->name }}</a></p>
         </div>
+        <span>
+            <img src="{{asset('img/nicebutton.png')}}" width="30px">
+             
+            <!-- もし$niceがあれば＝ユーザーが「いいね」をしていたら -->
+            @if($nice)
+            <!-- 「いいね」取消用ボタンを表示 -->
+            	<a href="{{ route('unnice', $post) }}" class="btn btn-success btn-sm">
+            		いいね
+            		<!-- 「いいね」の数を表示 -->
+            		<span class="badge">
+            			{{ $post->nices->count() }}
+            		</span>
+            	</a>
+            @else
+            <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
+            	<a href="{{ route('nice', $post) }}" class="btn btn-secondary btn-sm">
+            		いいね
+            		<!-- 「いいね」の数を表示 -->
+            		<span class="badge">
+            			{{ $post->nices->count() }}
+            		</span>
+            	</a>
+            @endif
+        </span>
         <div>
             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
             <a href="/">戻る</a>

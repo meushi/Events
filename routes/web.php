@@ -6,6 +6,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\PerformerController;
+use App\Http\Controllers\Post_likeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::get('/',[PostController::class,'index']);
+    Route::get('/',[PostController::class,'index']);
 Route::get('/posts/create', [PostController::class, 'create']);
 Route::get('/posts/create/{event}', [PostController::class, 'create']);
 Route::get('/posts/create/{venue}', [PostController::class, 'create']);
@@ -45,4 +45,6 @@ Route::get('/venues/{venue}', [VenueController::class,'index']);
 Route::get('/performers/{performer}', [PerformerController::class,'index']);
 Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
+});
+
 require __DIR__.'/auth.php';
