@@ -9,7 +9,7 @@ class VenueController extends Controller
 {
     public function index(Venue $venue)
     {
-        return view('venues.index')->with(['posts' => $venue->getByVenue()]);
+        return view('venues.index')->with(['posts' => $venue->getPaginateByVenue()]);
     }
     
     public function show(Venue $venue)

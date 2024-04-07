@@ -11,7 +11,7 @@ class Post_likeController extends Controller
 {
     public function nice(Post $post, Request $request)
     {
-        $nice=New Nice();
+        $nice=New Post_like();
         $nice->post_id=$post->id;
         $nice->user_id=Auth::user()->id;
         $nice->save();
@@ -21,7 +21,7 @@ class Post_likeController extends Controller
     public function unnice(Post $post, Request $request)
     {
         $user=Auth::user()->id;
-        $nice=Nice::where('post_id', $post->id)->where('user_id', $user)->first();
+        $nice=Post_like::where('post_id', $post->id)->where('user_id', $user)->first();
         $nice->delete();
         return back();
     }

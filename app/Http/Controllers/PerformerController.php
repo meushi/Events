@@ -9,7 +9,7 @@ class PerformerController extends Controller
 {
     public function index(Performer $performer)
     {
-        return view('performers.index')->with(['posts' => $performer->getByPerformer()]);
+        return view('performers.index')->with(['posts' => $performer->getPaginateByPerformer()]);
     }
     
     public function show(Performer $performer)

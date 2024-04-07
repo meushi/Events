@@ -9,7 +9,7 @@ class EventController extends Controller
 {
     public function index(Event $event)
     {
-        return view('events.index')->with(['posts' => $event->getByEvent()]);
+        return view('events.index')->with(['posts' => $event->getPaginateByEvent()]);
     }
     
     public function show(Event $event)

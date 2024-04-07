@@ -25,7 +25,7 @@
             		いいね
             		<!-- 「いいね」の数を表示 -->
             		<span class="badge">
-            			{{ $post->nices->count() }}
+            			{{ $post->post_likes->count() }}
             		</span>
             	</a>
             @else
@@ -34,7 +34,7 @@
             		いいね
             		<!-- 「いいね」の数を表示 -->
             		<span class="badge">
-            			{{ $post->nices->count() }}
+            			{{ $post->post_likes->count() }}
             		</span>
             	</a>
             @endif
