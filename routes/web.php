@@ -45,6 +45,9 @@ Route::get('/venues/{venue}', [VenueController::class,'index']);
 Route::get('/performers/{performer}', [PerformerController::class,'index']);
 Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
+Route::get('/community/nice/{post}', [Post_likeController::class, 'nice'])->name('nice');
+Route::get('/community/unnice/{post}', [Post_likeController::class, 'unnice'])->name('unnice');
+
 });
 
 require __DIR__.'/auth.php';
