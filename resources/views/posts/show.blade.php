@@ -43,5 +43,23 @@
             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
             <a href="/">戻る</a>
         </div>
+        <div class="card mb-4">
+            <form method="post" action="{{route('comment.store')}}">
+                @csrf
+                <input type="hidden" name='post_id' value="{{$post->id}}">
+                <div class="form-group">
+                    <textarea name="body" class="form-control" id="body" cols="30" rows="5" 
+                    placeholder="コメントを入力する">{{old('body')}}</textarea>
+                </div>
+                <div class="form-group mt-4">
+                <button class="btn btn-success float-right mb-3 mr-3">コメントする</button>
+                </div>
+            </form>
+        </div> 
+            <form method="post" action="{{route('post.destroy', $post)}}">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger" onClick="return confirm('本当に削除しますか？');">削除</button>
+            </form>
     </body>
 </html>
