@@ -7,6 +7,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\PerformerController;
 use App\Http\Controllers\Post_likeController;
+use App\Http\Controllers\Post_commentController;
 
 
 /*
@@ -47,7 +48,8 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::get('/community/nice/{post}', [Post_likeController::class, 'nice'])->name('nice');
 Route::get('/community/unnice/{post}', [Post_likeController::class, 'unnice'])->name('unnice');
-
+Route::post('/post/post_comment/store',[Post_commentController::class, 'store'])->name('comment.store');
+Route::post('/post/post_comment/destroy',[Post_commentController::class,'destroy'])->name('post.destroy');
 });
 
 require __DIR__.'/auth.php';
