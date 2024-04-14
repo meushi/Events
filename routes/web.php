@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\PerformerController;
@@ -41,6 +42,7 @@ Route::get('/posts/create/{performer}', [PostController::class, 'create']);
 Route::get('/posts/{post}',[PostController::class,'show']);
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/events/show',[PostController::class,'show']);
+Route::get('/users/{user}', [UserController::class,'index']);
 Route::get('/events/{event}', [EventController::class,'index']);
 Route::get('/venues/{venue}', [VenueController::class,'index']);
 Route::get('/performers/{performer}', [PerformerController::class,'index']);

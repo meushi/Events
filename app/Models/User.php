@@ -42,6 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
+    public function getPaginateByUser(int $limit_count = 5)
+    {
+        // updated_atで降順に並べたあと、limitで件数制限をかける
+        return $this->posts()->with('user')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
+    
     public function posts() {
         return $this->hasMany('App\Models\Post');
     }
