@@ -32,6 +32,11 @@
                 </form>
             </div>
         </div>
+        @foreach ($comments as $comment)
+                    <div style='border:solid 1px; margin-bottom: 10px;'>
+                        <p>{{$comment->body}}</p>
+                    </div>
+                @endforeach
         <div>
             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
             <a href="/">戻る</a>

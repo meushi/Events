@@ -19,7 +19,15 @@
                         <a class='eventname'href={{'/events/'.$post->event->id}}>{{$post->event->name}}</a>
                         <a class='venuename'href={{'/venues/'.$post->venue->id}}>{{$post->venue->name}}</a>
                         <a class='performername'href={{'/performers/'.$post->performer->id}}>{{$post->performer->name}}</a>
-                        <a class='postId'href='/posts/{{ $post->id }}'>{{$post->body}}</a>
+                        <div class="card-body">
+                            <p>{{Str::limit($post->body,100,'・・・')}}</p>
+                        </div>
+                        <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                            <div class="px-4 pt-3"> 
+                               <button type="button" class="btn btn-primary">
+                                  <a class="text-decoration-none" href='/posts/{{ $post->id }}' style="color:black;">詳細・コメントする</a>
+                              </button> </div>
+                        </div>
                     </div>
                 @endforeach
             </div>

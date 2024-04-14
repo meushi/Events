@@ -46,20 +46,27 @@
         <div class="card mb-4">
             <form method="post" action="{{route('comment.store')}}">
                 @csrf
-                <input type="hidden" name='post_id' value="{{$post->id}}">
+                <input type="hidden" name='post_id' value={{$post->id}}>
                 <div class="form-group">
                     <textarea name="body" class="form-control" id="body" cols="30" rows="5" 
-                    placeholder="コメントを入力する">{{old('body')}}</textarea>
+                    placeholder="コメントを入力する"></textarea>
                 </div>
                 <div class="form-group mt-4">
                 <button class="btn btn-success float-right mb-3 mr-3">コメントする</button>
                 </div>
             </form>
         </div> 
-            <form method="post" action="{{route('post.destroy', $post)}}">
+                @foreach ($comments as $comment)
+                    <div style='border:solid 1px; margin-bottom: 10px;'>
+                        <p>{{$comment->user->name}}</p>
+                        <p>{{$comment->body}}</p>
+                    </div>
+                    <form method="post" action="{{route('comment.destroy', $comment)}}">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-danger" onClick="return confirm('本当に削除しますか？');">削除</button>
-            </form>
+                    </form>
+                @endforeach
+            
     </body>
 </html>
