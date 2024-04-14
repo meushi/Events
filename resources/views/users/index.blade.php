@@ -2,12 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>トップページ</title>
+        <title>ユーザー投稿一覧</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>投稿一覧</h1>
+        <h1>ユーザーごとの投稿一覧</h1>
         <a href='/posts/create/'>新規作成</a>
             <h2 class='body'>
                 <a href="/posts/"></a>
@@ -19,15 +19,7 @@
                         <a class='eventname'href={{'/events/'.$post->event->id}}>{{$post->event->name}}</a>
                         <a class='venuename'href={{'/venues/'.$post->venue->id}}>{{$post->venue->name}}</a>
                         <a class='performername'href={{'/performers/'.$post->performer->id}}>{{$post->performer->name}}</a>
-                        <div class="card-body">
-                            <p>{{Str::limit($post->body,100,'・・・')}}</p>
-                        </div>
-                        <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                            <div class="px-4 pt-3"> 
-                               <button type="button" class="btn btn-primary">
-                                  <a class="text-decoration-none" href='/posts/{{ $post->id }}' style="color:black;">詳細・コメントする</a>
-                              </button> </div>
-                        </div>
+                        <a class='postId'href={{'/posts/'.$post->id}}>記事の詳細へ</a>
                     </div>
                 @endforeach
             </div>
