@@ -49,7 +49,7 @@ Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::get('/community/nice/{post}', [Post_likeController::class, 'nice'])->name('nice');
 Route::get('/community/unnice/{post}', [Post_likeController::class, 'unnice'])->name('unnice');
 Route::post('/post/post_comment/store',[Post_commentController::class, 'store'])->name('comment.store');
-Route::post('/post/post_comment/destroy',[Post_commentController::class,'destroy'])->name('post.destroy');
+Route::delete('/post/post_comment/{comment}',[Post_commentController::class,'destroy'])->name('comment.destroy');
 });
 
 require __DIR__.'/auth.php';
