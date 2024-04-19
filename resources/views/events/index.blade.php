@@ -15,7 +15,7 @@
             <div>
                 @foreach ($posts as $post)
                     <div style='border:solid 1px; margin-bottom: 10px;'>
-                        <a href={{'/users/show/'.$post->user->id}}>{{$post->user->name}}</a>
+                        <a href={{'/users/'.$post->user->id}}>{{$post->user->name}}</a>
                         <a class='eventname'href={{'/events/'.$post->event->id}}>{{$post->event->name}}</a>
                         <a class='venuename'href={{'/venues/'.$post->venue->id}}>{{$post->venue->name}}</a>
                         <a class='performername'href={{'/performers/'.$post->performer->id}}>{{$post->performer->name}}</a>
