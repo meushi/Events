@@ -10,6 +10,7 @@
     <body>
         <h1>投稿詳細</h1>
         <div>
+            <p>投稿者：<a href={{'/users/'.$post->user->id}}>{{$post->user->name}}</a></p>
             <p>イベント：<a href="/events/{{ $post->event->id }}">{{ $post->event->name }}</a></p>
             <p>本文：{{ $post->body }}</p>
             <p>会場:<a href="/venues/{{ $post->venue->id }}">{{ $post->venue->name }}</a></p>
