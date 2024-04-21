@@ -9,7 +9,9 @@ use App\Http\Controllers\VenueController;
 use App\Http\Controllers\PerformerController;
 use App\Http\Controllers\Post_likeController;
 use App\Http\Controllers\Post_commentController;
+use App\Http\Controllers\Comment_likeController;
 use App\Http\Controllers\PostRequest;
+
 
 
 /*
@@ -53,6 +55,8 @@ Route::get('/community/nice/{post}', [Post_likeController::class, 'nice'])->name
 Route::get('/community/unnice/{post}', [Post_likeController::class, 'unnice'])->name('unnice');
 Route::post('/post/post_comment/store',[Post_commentController::class, 'store'])->name('comment.store');
 Route::delete('/post/post_comment/{comment}',[Post_commentController::class,'destroy'])->name('comment.destroy');
+Route::get('/community/nice/{comment}', [Comment_likeController::class, 'nice'])->name('comment.nice');
+Route::get('/community/unnice/{comment}', [Comment_likeController::class, 'unnice'])->name('comment.unnice');
 });
 
 require __DIR__.'/auth.php';

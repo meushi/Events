@@ -57,17 +57,40 @@
                 </div>
             </form>
         </div> 
-                @foreach ($comments as $comment)
-                    <div style='border:solid 1px; margin-bottom: 10px;'>
-                        <p>{{$comment->user->name}}</p>
-                        <p>{{$comment->body}}</p>
-                    </div>
-                    <form method="post" action="{{route('comment.destroy', $comment)}}">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-danger" onClick="return confirm('本当に削除しますか？');">削除</button>
-                    </form>
-                @endforeach
-            
+            @foreach ($comments as $comment)
+                <div style='border:solid 1px; margin-bottom: 10px;'>
+                    <p>{{$comment->user->name}}</p>
+                    <p>{{$comment->body}}</p>
+                </div>
+                <span>
+                    <img src="{{asset('img/nicebutton.png')}}" width="30px">
+                     
+                    <!-- もし$niceがあれば＝ユーザーが「いいね」をしていたら -->
+                    @if($nice)
+                    <!-- 「いいね」取消用ボタンを表示 -->
+                    	<a href="{{ route('comment.unnice', $comment) }}" class="btn btn-success btn-sm">
+                    		いいね
+                    		<!-- 「いいね」の数を表示 -->
+                    		<span class="badge">
+                    			{{ $comment->comment_likes->count() }}
+                    		</span>
+                    	</a>
+                    @else
+                    <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
+                    	<a href="{{ route('comment.nice', $comment) }}" class="btn btn-secondary btn-sm">
+                    		いいね
+                    		<!-- 「いいね」の数を表示 -->
+                    		<span class="badge">
+                    			{{ $comment->comment_likes->count() }}
+                    		</span>
+                    	</a>
+                    @endif
+                </span>
+                <form method="post" action="{{route('comment.destroy', $comment)}}">
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn btn-danger" onClick="return confirm('本当に削除しますか？');">削除</button>
+                </form>
+            @endforeach
     </body>
 </html>
