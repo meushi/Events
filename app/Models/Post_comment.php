@@ -30,4 +30,9 @@ class Post_comment extends Model
     {
         return $this->belongsTo('App\Models\Post');
     }
+    
+    public function comment_likes()
+    {
+        return $this->hasMany(Comment_like::class);
+    }
 }
