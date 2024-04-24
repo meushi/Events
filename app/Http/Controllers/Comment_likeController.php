@@ -12,7 +12,7 @@ class Comment_likeController extends Controller
     public function nice(Post_comment $comment, Request $request)
     {
         $nice=New Comment_like();
-        $nice->comment_id=$comment->id;
+        $nice->post_comment_id=$comment->id;
         $nice->user_id=Auth::user()->id;
         $nice->save();
         return back();
@@ -21,7 +21,7 @@ class Comment_likeController extends Controller
     public function unnice(Post_comment $comment, Request $request)
     {
         $user=Auth::user()->id;
-        $nice=Comment_like::where('comment_id', $comment->id)->where('user_id', $user)->first();
+        $nice=Comment_like::where('post_comment_id', $comment->id)->where('user_id', $user)->first();
         $nice->delete();
         return back();
     }

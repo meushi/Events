@@ -20,8 +20,9 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $nice=Post_like::where('post_id', $post->id)->where('user_id', auth()->user()->id)->first();
+        //$comment_nice=
         $comments=$post->post_comments()->get();
-        return view('posts.show', compact('post', 'nice'))->with(['post' => $post,'comments' => $comments]);
+        return view('posts.show', compact('post', 'nice'))->with(['post' => $post,'comments' => $comments,'nice' =>$nice]);
     }
     
     public function create(Event $event, Venue $venue, Performer $performer)

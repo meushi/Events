@@ -35,4 +35,22 @@ class Post_comment extends Model
     {
         return $this->hasMany(Comment_like::class);
     }
+    
+    public function isliked_comment()
+    {
+        $id = \Auth::id();
+        //likersを空の配列として定義
+        $likers = array();
+        //foreachでlikesリレーションを用いて$likeに$thisとlikesテーブルの情報を格納
+        foreach ($this->comment_likes as $like) {
+            //array_pushで配列likersに＄like($thisと関連するikesテーブルの情報、今回は＄articleとlikeテーブル)のuser_idを取得
+            array_push($likers, $like->user_id);
+        }
+
+        if (in_array($id, $likers)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

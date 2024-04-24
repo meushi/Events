@@ -54,9 +54,9 @@ Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::get('/community/nice/{post}', [Post_likeController::class, 'nice'])->name('nice');
 Route::get('/community/unnice/{post}', [Post_likeController::class, 'unnice'])->name('unnice');
 Route::post('/post/post_comment/store',[Post_commentController::class, 'store'])->name('comment.store');
+Route::get('/nice/comment/{comment}', [Comment_likeController::class, 'nice'])->name('comment.nice');
+Route::get('/unnice/comment/{comment}', [Comment_likeController::class, 'unnice'])->name('comment.unnice');
 Route::delete('/post/post_comment/{comment}',[Post_commentController::class,'destroy'])->name('comment.destroy');
-Route::get('/community/nice/{comment}', [Comment_likeController::class, 'nice'])->name('comment.nice');
-Route::get('/community/unnice/{comment}', [Comment_likeController::class, 'unnice'])->name('comment.unnice');
 });
 
 require __DIR__.'/auth.php';
