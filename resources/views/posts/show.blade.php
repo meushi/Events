@@ -1,14 +1,5 @@
-<!DOCTYPE HTML>
-<html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>詳細画面</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
-    <body>
-        <h1>投稿詳細</h1>
+<x-app-layout>
+        <h1 class="text-red-200">投稿詳細</h1>
         <div>
             <p>投稿者：<a href={{'/users/'.$post->user->id}}>{{$post->user->name}}</a></p>
             <p>イベント：<a href="/events/{{ $post->event->id }}">{{ $post->event->name }}</a></p>
@@ -66,9 +57,9 @@
                     <img src="{{asset('img/nicebutton.png')}}" width="30px">
                      
                     <!-- もし$niceがあれば＝ユーザーが「いいね」をしていたら -->
-                    @if($nice)
+                    @if($comment->isliked_comment())
                     <!-- 「いいね」取消用ボタンを表示 -->
-                    	<a href="{{ route('comment.unnice', $comment) }}" class="btn btn-success btn-sm">
+                    	<a href="{{ route('comment.unnice', $comment->id) }}" class="btn btn-success btn-sm">
                     		いいね
                     		<!-- 「いいね」の数を表示 -->
                     		<span class="badge">
@@ -77,7 +68,7 @@
                     	</a>
                     @else
                     <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
-                    	<a href="{{ route('comment.nice', $comment) }}" class="btn btn-secondary btn-sm">
+                    	<a href="{{ route('comment.nice', $comment->id) }}" class="btn btn-secondary btn-sm">
                     		いいね
                     		<!-- 「いいね」の数を表示 -->
                     		<span class="badge">
@@ -92,5 +83,4 @@
                 <button type="submit" class="btn btn-danger" onClick="return confirm('本当に削除しますか？');">削除</button>
                 </form>
             @endforeach
-    </body>
-</html>
+</x-app-layout>
