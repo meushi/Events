@@ -10,7 +10,6 @@ use App\Http\Controllers\PerformerController;
 use App\Http\Controllers\Post_likeController;
 use App\Http\Controllers\Post_commentController;
 use App\Http\Controllers\Comment_likeController;
-use App\Http\Controllers\PostRequest;
 
 
 
