@@ -35,7 +35,7 @@
             	</a>
             @endif
         </span>
-        <div>
+        <div class="edit">
             <p>[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
             <a href="/">戻る</a>
         </div>

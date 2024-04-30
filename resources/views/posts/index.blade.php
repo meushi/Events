@@ -25,9 +25,6 @@
                         </div>
                     @endforeach
                 </div>
-            <div>
-                <a href="/">トップページへ</a>
-            </div>
         </body>
     </div>
 </x-app-layout>
