@@ -8,10 +8,10 @@
             <body>
                 <form action="/posts" method="POST">
                     @csrf
-                    <div class="title">
+                    <div class="title text-black">
                         <textarea name="post[title]" placeholder="イベント名"></textarea>
                     </div>
-                    <div class="body">
+                    <div class="body text-black">
                         <textarea name="post[body]" placeholder="楽しかった。"></textarea>
                     </div>
                     <div class="Event">
