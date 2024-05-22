@@ -9,7 +9,8 @@
 
 ## 概要
 
-音楽イベントやゲームなど大勢の人が集まる会場での情報共有を目的したWebアプリケーション
+音楽イベントやゲームなど大勢の人が集まる会場での情報共有を目的したWebアプリケーション。
+事前に情報収集をすることでイベント会場での不安
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
